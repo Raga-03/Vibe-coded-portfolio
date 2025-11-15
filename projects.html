@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - Raga Bhamidipati</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand"><a href="index.html">Sai Raga Bhamidipati</a></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="contact.html">Contact</a>
+      <button id="dark-toggle" class="moon" aria-label="Toggle dark mode" aria-pressed="false">◐</button>
+    </nav>
+  </header>
+
+  <main class="container projects-page">
+    <h1 class="page-title">Featured Projects</h1>
+
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="twitter_sentiment.jpg" alt="Twitter-Platform">
+
+        <h2 class="project-title">Twitter Sentiment Analysis</h2>
+        <p class="project-desc">
+          Developed a sentiment analysis model using machine learning algorithms and Twitter data. Used Python libraries (Scikit-learn, Seaborn) to classify tweets into positive, negative, and neutral categories, also applied NLP techniques and ML algorithms to classify sentiment with 80 %+ accuracy. Explored conversational AI workflows using Python libraries like NLTK / spaCy (beginner-level)
+        </p>
+
+        <div class="badges">
+          <span class="badge">Python Programming</span>
+          <span class="badge">Machine Learning Algorithms</span>
+          <span class="badge">Jupyter Notebook</span>
+          <span class="badge">Scikit-learn</span>
+          <span class="badge">Excel</span>
+        </div>
+
+        <div class="project-buttons">
+          <a class="btn btn-live" href="https://github.com/Raga-03/Twitter_Sentiment_Analysis" target="_blank">Github</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="privacy_preserving.png" alt="Task Management System">
+
+        <h2 class="project-title">Data Privacy in Machine Learning Systems</h2>
+        <p class="project-desc">
+            Built a privacy-preserving ML model for heart disease prediction using differential privacy, 
+            federated learning, and homomorphic encryption. Ensured data security and privacy-sensitive heart disease data without sacrificing model accuracy.
+        </p>
+
+        <div class="badges">
+          <span class="badge">Python Programming</span>
+          <span class="badge">Machine Learning</span>
+          <span class="badge">Privacy-Preserving Techniques</span>
+          <span class="badge">Jupyter Notebook</span>
+        </div>
+
+        <div class="project-buttons">
+          <a class="btn btn-live" href="https://github.com/Raga-03/PPML-Securing-Data-In-AI-Systems" target="_blank">Github</a>
+        </div>
+      </div>
+
+      <!-- Project 3 
+    <div class="project-card"> 
+        <img src="images/project3.jpg" alt="Analytics Dashboard"> 
+        <h2 class="project-title">Weather Forecast App</h2> 
+        <p class="project-desc"> A sleek, real-time weather app fetching API data to show temperature, humidity, 
+            and forecasts with clean visuals and practical UI. </p> 
+            <div class="badges"> 
+                <span class="badge">JavaScript</span> 
+                <span class="badge">OpenWeather API</span> 
+                <span class="badge">HTML</span> 
+                <span class="badge">CSS</span> 
+            </div> 
+            <div class="project-buttons"> 
+                <a class="btn btn-live" href="https://example.com/weather" target="_blank">Live Demo</a> 
+                <a class="btn btn-code" href="https://github.com/yourname/weather-app" target="_blank">Code</a> 
+            </div> 
+    </div> 
+    -->
+        
+    <!-- Project 4 
+    <div class="project-card"> 
+        <img src="images/project4.jpg" alt="ECommerce UI Prototype"> 
+        <h2 class="project-title">Small E-Commerce UI Prototype</h2> 
+        <p class="project-desc"> A modern, stylish UI prototype for an online shopping platform — product listings, 
+           categories, and smooth front-end flow. </p> 
+            <div class="badges"> 
+                <span class="badge">React</span> 
+                <span class="badge">Tailwind CSS</span> 
+            </div> 
+            <div class="project-buttons"> 
+                <a class="btn btn-live" href="https://example.com/ecom-ui" target="_blank">Live Demo</a> 
+                <a class="btn btn-code" href="https://github.com/yourname/ecom-ui" target="_blank">Code</a> 
+            </div> 
+    </div> 
+    -->
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Raga Bhamidipati. All rights reserved.</p>
+  </footer>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const saved = localStorage.getItem('theme');
+
+      if (saved === 'dark') root.classList.add('dark');
+
+      function updateButtons(isDark) {
+        document.querySelectorAll('.moon').forEach(btn => {
+          btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+          btn.textContent = isDark ? '☀︎' : '◐';
+        });
+      }
+
+      updateButtons(root.classList.contains('dark'));
+
+      document.querySelectorAll('.moon').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const isDark = root.classList.toggle('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          updateButtons(isDark);
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

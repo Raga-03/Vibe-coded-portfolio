@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raga_Bhamidipati - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Poppins:wght@300;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand"><a href="index.html">Sai Raga Bhamidipati</a></div>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="projects.html">My Projects</a>
+      <a href="contact.html">Contact me</a>
+      <button id="dark-toggle-2" class="moon" aria-label="Toggle dark mode" aria-pressed="false">◐</button>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="hero-inner">
+      <!-- Profile Image -->
+      <div class="profile-wrapper">
+        <img src="RAGA.jpg" alt="Raga Bhamidipati" class="profile-pic">
+      </div>
+
+      <h1>Raga Bhamidipati</h1>
+      <h2>Data Analyst</h2>
+      <p class="lead">Turning messy datasets into meaningful narratives that steer business impact.</p>
+
+      <div class="cta">
+        <a class="btn btn-primary" href="projects.html" aria-label="View Projects">View Projects</a>
+        <a class="btn btn-primary" href="contact.html" aria-label="Get In Touch">Get In Touch</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Small preview sections to match About / Projects -->
+  <section class="preview container">
+    <div class="two-col-preview">
+      <div>
+        <h3>About</h3>
+        <p class="muted">Passionate data analyst skilled in Python, SQL, and data visualization. I focus on accuracy, actionable insights, and clear storytelling through data.</p>
+        <a class="btn btn-ghost" href="about.html">Learn More</a>
+      </div>
+
+      <div>
+        <h3>Featured Projects</h3>
+        <p class="muted">Data-driven solutions: a Twitter sentiment analysis pipeline uncovering public opinion trends, and a privacy-preserving machine learning model designed to protect sensitive data while delivering accurate predictions</p>
+        <a class="btn btn-ghost" href="projects.html">See Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© 2025 Raga Bhamidipati. All rights reserved.</p>
+  </footer>
+
+  
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const storageKey = 'theme';
+      const toggleClass = 'dark';
+
+      const saved = localStorage.getItem(storageKey);
+      if (saved === 'dark') root.classList.add(toggleClass);
+
+      function syncToggles(isDark) {
+        document.querySelectorAll('.moon').forEach(btn => {
+          btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+          btn.textContent = isDark ? '☀︎' : '◐';
+        });
+      }
+
+      syncToggles(root.classList.contains(toggleClass));
+
+      document.querySelectorAll('.moon').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const isNowDark = root.classList.toggle(toggleClass);
+          localStorage.setItem(storageKey, isNowDark ? 'dark' : 'light');
+          syncToggles(isNowDark);
+        });
+      });
+
+      if (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        root.classList.add(toggleClass);
+        syncToggles(true);
+      }
+    })();
+  </script>
+  
+</body>
+</html>
